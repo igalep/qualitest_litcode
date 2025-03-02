@@ -6,10 +6,12 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.firefox.service import Service as EdgeService
+import allure
 
 def pytest_addoption(parser):
     parser.addoption("--browser", action="store", default="chrome", help="Browser: chrome, firefox, edge")
 
+@allure.title("Setup a browser")
 @pytest.fixture(scope='function')
 def driver(request):
     browser = request.config.getoption("--browser")
