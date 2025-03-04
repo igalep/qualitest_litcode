@@ -1,6 +1,5 @@
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 
 
@@ -13,7 +12,7 @@ class BasePage:
         self.wait = 10
 
 
-    def wait_for_element(self,by, locator):
+    def wait_for_element_return_elem(self, by, locator):
         try:
             element = WebDriverWait(self.driver, self.wait).until(
                 EC.presence_of_element_located((by, locator))

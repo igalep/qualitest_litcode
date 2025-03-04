@@ -10,5 +10,5 @@ class AmazonSelectedItemPage(BasePage):
 
 
     def add_item_to_cart(self):
-        add_to_cart_btn = self.wait_for_element(by=By.ID, locator=self.add_to_cart)
+        add_to_cart_btn = self.wait_for_element_return_elem(by=By.ID, locator=self.add_to_cart)
         add_to_cart_btn.click()

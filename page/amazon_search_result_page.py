@@ -12,7 +12,7 @@ class AmazonSearchResultsPage(BasePage):
 
 
     def select_nth_product(self, selected_item):
-        self.wait_for_element(by=By.CSS_SELECTOR, locator=self.search_results, ) #wait for the results to load
+        self.wait_for_element_return_elem(by=By.CSS_SELECTOR, locator=self.search_results, ) #wait for the results to load
 
         products = self.find_elements(by=By.CSS_SELECTOR, locator=self.search_results)
         if len(products) >= selected_item:

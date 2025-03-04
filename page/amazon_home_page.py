@@ -12,7 +12,7 @@ class AmazonHomePage(BasePage):
         self.open_url(self.home_page_url)
 
     def search_product(self, product_name):
-        search_box_elem = self.wait_for_element(by=By.ID, locator=self.search_box)
+        search_box_elem = self.wait_for_element_return_elem(by=By.ID, locator=self.search_box)
         search_box_elem.clear()
 
         search_box_elem.send_keys(product_name)

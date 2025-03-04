@@ -9,5 +9,5 @@ class AmazonCartMidPage(BasePage):
 
 
     def go_to_checkout(self):
-        proceed_to_checkout_btn = self.wait_for_element(by=By.ID, locator=self.proceed_to_checkout)
+        proceed_to_checkout_btn = self.wait_for_element_return_elem(by=By.ID, locator=self.proceed_to_checkout)
         proceed_to_checkout_btn.click()
